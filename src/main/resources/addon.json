@@ -1,0 +1,10 @@
+{
+  "uuid": "%uuid%",
+  "name": "AutoStats",
+  "mainClass": "com.lpn.autostats.AutoStats",
+  "description": "Puts the statistics of players in the tab list. By default supports GommeHD.net.",
+  "version": 0.1,
+  "author": "Sirvierl0ffel",
+  "category": 2,
+  "icon": "https://i.imgur.com/IlQM4sA.png"
+}
