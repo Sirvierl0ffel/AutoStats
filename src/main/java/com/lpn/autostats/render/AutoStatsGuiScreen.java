@@ -96,8 +96,9 @@ public class AutoStatsGuiScreen extends GuiScreen {
 		buttonList.add(reloadButton = new GuiButton(3, btnX, height - 26, btnWidth, 20, "Reload"));
 		btnX += btnWidth + 4;
 		buttonList.add(doneButton = new GuiButton(4, btnX, height - 26, btnWidth, 20, "Done"));
-		buttonList
-				.add(discordButton = new GuiButton(5, 4, height - 51, width / 2 - 8, 20, "AutoStats Discord for More"));
+		int sw = fontRendererObj.getStringWidth("AutoStats Discord for More") + 12;
+		buttonList.add(discordButton = new GuiButton(5, 4 + ((width / 2 - 8) - sw) / 2, height - 51, sw, 20,
+				"AutoStats Discord for More"));
 		buttonList.add(buttonBack = new GuiButton(6, width - 26, 4, 22, 20, "<"));
 
 		scrollbar.setPosition(width - 6, 32, width - 2, height - 58);
@@ -114,7 +115,7 @@ public class AutoStatsGuiScreen extends GuiScreen {
 			e.updateScreen();
 		}
 	}
-	
+
 	@Override
 	public void onGuiClosed() {
 		super.onGuiClosed();
@@ -447,9 +448,8 @@ public class AutoStatsGuiScreen extends GuiScreen {
 		@Override
 		protected void drawSlot(int index, int p_180791_2_, int y, int p_180791_4_, int mouseXIn, int mouseYIn) {
 			Extension e = extensions.get(index);
-			drawCenteredString(fontRendererObj,
-					(e == extensionManager.getCurrent() ? "\u00A7e" : "") + e.name, width / 2,
-					y + 1, 0xC0C0C0);
+			drawCenteredString(fontRendererObj, (e == extensionManager.getCurrent() ? "\u00A7e" : "") + e.name,
+					width / 2, y + 1, 0xC0C0C0);
 		}
 
 		/** {@inheritDoc} */
