@@ -29,13 +29,22 @@ import net.minecraft.client.Minecraft;
  * create a newer version only it will be loaded, thanks to the all-mighty date
  * parameter in the constructor. You can keep the same class name for every
  * version. If two different classes can manage a game, the one with the latest
- * date will get chosen. The event methods are even called, if {@link #doUse()}
- * returns false
+ * date will get chosen. The event methods are called, even if {@link #doUse()}
+ * returns {@code false}
  * 
  * @author Sirvierl0ffel
  */
 
 public abstract class Extension implements Comparable<Extension> {
+
+	/** The AutoStats instance */
+	protected final AutoStats autoStats;
+
+	/** The ExtensionManager instance */
+	protected final ExtensionManager extensionManager;
+
+	/** The AutoStats logger instance */
+	protected final Logger logger = LogManager.getLogger("AutoStats");
 
 	/** The date this version of the extension was created */
 	public final long date;
@@ -51,15 +60,6 @@ public abstract class Extension implements Comparable<Extension> {
 	 * configuration marked with it
 	 */
 	protected final List<Long> incompatible = new ArrayList<>();
-
-	/** The AutoStats instance */
-	protected final AutoStats autoStats;
-
-	/** The ExtensionManager instance */
-	protected final ExtensionManager extensionManager;
-
-	/** The AutoStats logger instance */
-	protected final Logger logger = LogManager.getLogger("AutoStats");
 
 	/**
 	 * The configuration of this extension, saved in the addon configuration, if

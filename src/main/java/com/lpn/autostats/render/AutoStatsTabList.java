@@ -68,8 +68,9 @@ public class AutoStatsTabList extends ModPlayerTabOverlay {
 	};
 
 	public static final Ordering<NetworkPlayerInfo> ordering = Ordering.from((nwPlayer1, nwPlayer2) -> {
-		if (nwPlayer1 == null) return 0;
-		if (nwPlayer2 == null) return 0;
+		if (nwPlayer1 == null && nwPlayer2 == null) return 0;
+		if (nwPlayer1 == null) return -1;
+		if (nwPlayer2 == null) return 1;
 
 		AutoStats autoStats = AutoStats.instance();
 		if (autoStats.isEnabled() && autoStats.extensionManager.isSupported() && autoStats.isTabListEnabled()
