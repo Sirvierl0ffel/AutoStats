@@ -114,6 +114,12 @@ public class AutoStatsGuiScreen extends GuiScreen {
 			e.updateScreen();
 		}
 	}
+	
+	@Override
+	public void onGuiClosed() {
+		super.onGuiClosed();
+		autoStats.saveConfig();
+	}
 
 	/** {@inheritDoc} */
 	@Override
@@ -317,7 +323,6 @@ public class AutoStatsGuiScreen extends GuiScreen {
 			blacklistButton.enabled = false;
 		} else if (button.id == 4) {
 			// Done
-			autoStats.saveConfig();
 			mc.displayGuiScreen(parentScreen);
 		} else if (button.id == 5) {
 			// AutoStats discord
@@ -367,7 +372,6 @@ public class AutoStatsGuiScreen extends GuiScreen {
 			}
 
 			// Escape
-			autoStats.saveConfig();
 			mc.displayGuiScreen(parentScreen);
 		}
 
