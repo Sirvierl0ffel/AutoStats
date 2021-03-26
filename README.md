@@ -1,4 +1,4 @@
-# AutoStats
+# AutoStats (Discontinued)
  AutoStats is a LabyMod addon, which can query statistics of players and display them in the tab list.
  
  <p>Right now only GommeHD.net is supported, but any suggestion for other servers are welcome. Just post them on my discord: https://discord.gg/UDGV5mh<p>
